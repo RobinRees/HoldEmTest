@@ -24,3 +24,34 @@ function shuffleDeck(deck) {
 let deck = createDeck();
 deck = shuffleDeck(deck);
 console.log(deck);
+
+function dealCardToPlayer() {
+
+}
+
+let playerOneHand = { name: "Player One", hand: [] };
+let playerTwoHand = { name: "Player Two", hand: [] };
+const playerOne = document.getElementById("playerOne");
+const playerTwo = document.getElementById("playerTwo");
+
+function giveCards() {
+    for(let i = 0; i < 2; i++) {
+        let cardToPlayerOne = deck.shift();
+        playerOneHand.hand.push(cardToPlayerOne);
+
+        let cardToPlayerTwo = deck.shift();
+        playerTwoHand.hand.push(cardToPlayerTwo);
+    }
+    console.log(playerOneHand);
+    console.log(playerTwoHand);
+    console.log(deck);
+}
+
+function showCards() {
+    for (let i = 0; i < playerOneHand.length, i++) {
+        const div = document.createElement("div");
+        div.classList.add("playerCards");
+        div.textContent = `${number}, ${color}`;
+    }
+
+}
